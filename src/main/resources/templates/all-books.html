@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Список книг</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="tableBook">
+            <table>
+                <thead>
+                    <tr>
+<!--                        <td width="10%">№</td>-->
+                        <td width="30%">Название</td>
+                        <td width="20%">Автор</td>
+                        <td width="15%">Издательство</td>
+                        <td width="15%">Дата издания</td>
+                        <td width="10%">Количество страниц</td>
+                    </tr>
+                </thead>
+                <tbody th:each="el : ${books}">
+                    <tr>
+<!--                        <td th:text="${}"></td>-->
+                        <td th:text="${el.name}"></td>
+                        <td th:text="${el.author}"></td>
+                        <td th:text="${el.publishingHouse}"></td>
+                        <td th:text="${el.publishingDate}"></td>
+                        <td th:text="${el.pageCounter}"></td>
+                    </tr>
+                </tbody>
+            </table><br><br>
+            <a href="../new">
+                <button >Добавить книгу</button>
+            </a>
+        </div>
+    </div>
+</body>
+</html>
